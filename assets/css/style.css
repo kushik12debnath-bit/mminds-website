@@ -1,0 +1,76 @@
+/* MMinds Design System — Industrial Dark / Electric Blue + Emerald */
+:root{
+  --bg:#060a14; --bg2:#0a1120; --card:#0d1528; --line:rgba(255,255,255,.08);
+  --txt:#f1f5f9; --mut:#94a3b8; --mut2:#64748b;
+  --blue:#3b82f6; --indigo:#6366f1; --emerald:#10b981; --cyan:#22d3ee;
+  --radius:20px; --font-d:'Outfit',sans-serif; --font-b:'Inter',sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:var(--font-b);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--font-d);letter-spacing:-.03em;line-height:1.05}
+::selection{background:rgba(59,130,246,.35)}
+.font-display{font-family:var(--font-d)}
+.glass{background:rgba(13,21,40,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+.mesh{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.mesh::before,.mesh::after{content:"";position:absolute;border-radius:50%;filter:blur(110px);opacity:.5}
+.mesh::before{width:560px;height:560px;background:radial-gradient(circle,#3b82f6 0%,transparent 65%);top:-180px;left:-120px}
+.mesh::after{width:620px;height:620px;background:radial-gradient(circle,#10b98155 0%,transparent 65%);bottom:-260px;right:-160px}
+.mesh-indigo::before{background:radial-gradient(circle,#6366f1aa 0%,transparent 65%)}
+.grid-bg{background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 90% 70% at 50% 30%,black 40%,transparent 100%)}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.015));border:1px solid var(--line);border-radius:var(--radius)}
+.card:hover{border-color:rgba(59,130,246,.4)}
+.btn-primary{background:linear-gradient(135deg,#3b82f6,#6366f1);box-shadow:0 8px 32px -8px rgba(59,130,246,.6);transition:.25s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 44px -8px rgba(99,102,241,.7)}
+.btn-ghost{border:1px solid var(--line);transition:.25s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.06)}
+.pill{border:1px solid var(--line);background:rgba(255,255,255,.04)}
+.ticker{display:flex;gap:3.5rem;width:max-content;animation:tick 28s linear infinite}
+@keyframes tick{to{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal-d1{transition-delay:.08s}.reveal-d2{transition-delay:.16s}.reveal-d3{transition-delay:.24s}
+.nav-blur.scrolled{background:rgba(6,10,20,.82);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.link-underline{position:relative}
+.link-underline::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:linear-gradient(90deg,var(--blue),var(--emerald));transition:.25s}
+.link-underline:hover::after,.link-underline.active::after{width:100%}
+.acc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.acc.open .acc-body{grid-template-rows:1fr}
+.acc-inner{overflow:hidden}
+.acc.open .acc-icon{transform:rotate(45deg)}
+.acc-icon{transition:.3s}
+.tab-btn.active{background:linear-gradient(135deg,#3b82f6,#6366f1);border-color:transparent;color:#fff}
+.glow-dot{box-shadow:0 0 12px 2px currentColor}
+input,select,textarea{color-scheme:dark}
+.field{background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:12px;width:100%;padding:.8rem 1rem;color:var(--txt);outline:none;transition:.2s}
+.field:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(59,130,246,.2);background:rgba(255,255,255,.06)}
+.field.err{border-color:#f43f5e;box-shadow:0 0 0 3px rgba(244,63,94,.15)}
+.bento-hover{transition:transform .3s,border-color .3s,box-shadow .3s}
+.bento-hover:hover{transform:translateY(-4px);box-shadow:0 20px 60px -20px rgba(59,130,246,.35)}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.ticker{animation:none}html{scroll-behavior:auto}}
+
+/* ============ MMinds FX layer (Lenis + GSAP + scroll themes) ============ */
+body{transition:background-color 1s ease}
+body[data-theme="indigo"]{background-color:#080818}
+body[data-theme="emerald"]{background-color:#04120e}
+header,main,section,footer{position:relative;z-index:1}
+#progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:70;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#3b82f6,#818cf8,#34d399)}
+#ambient{position:fixed;inset:0;z-index:0;pointer-events:none}
+#ambient i{position:absolute;inset:-20%;opacity:0;transition:opacity 1.2s ease}
+#ambient .a-base{background:radial-gradient(600px 400px at 15% 8%,rgba(59,130,246,.15),transparent 60%),radial-gradient(700px 500px at 85% 92%,rgba(16,185,129,.09),transparent 60%);opacity:1}
+#ambient .a-indigo{background:radial-gradient(700px 500px at 82% 4%,rgba(99,102,241,.24),transparent 62%),radial-gradient(620px 520px at 8% 96%,rgba(59,130,246,.15),transparent 62%)}
+#ambient .a-emerald{background:radial-gradient(700px 500px at 10% 8%,rgba(16,185,129,.20),transparent 62%),radial-gradient(700px 500px at 92% 92%,rgba(34,211,238,.12),transparent 62%)}
+body[data-theme="indigo"] #ambient .a-base,body[data-theme="emerald"] #ambient .a-base{opacity:0}
+body[data-theme="indigo"] #ambient .a-indigo{opacity:1}
+body[data-theme="emerald"] #ambient .a-emerald{opacity:1}
+#cursor{position:fixed;top:0;left:0;width:360px;height:360px;margin:-180px 0 0 -180px;border-radius:50%;pointer-events:none;z-index:2;mix-blend-mode:screen;background:radial-gradient(circle,rgba(99,102,241,.16),transparent 62%);opacity:0;transition:opacity .4s}
+@media (hover:none){#cursor{display:none}}
+#stars{position:absolute;inset:0;width:100%;height:100%;opacity:.75;pointer-events:none}
+.w-line{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.w-inner{display:inline-block;transform:translateY(115%);will-change:transform}
+.no-motion .w-inner{transform:none}
+.card{position:relative}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;transition:opacity .35s;pointer-events:none;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(99,102,241,.14),transparent 65%)}
+.card:hover::after{opacity:1}
+[data-magnetic]{will-change:transform}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
