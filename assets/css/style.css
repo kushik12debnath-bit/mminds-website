@@ -101,7 +101,7 @@ header,main,section,footer{position:relative;z-index:1}
   background:radial-gradient(circle,rgba(99,102,241,.15),transparent 62%)}
 @media (hover:none){#cursor{display:none}}
 #stars{position:absolute;inset:0;width:100%;height:100%;opacity:.75;pointer-events:none}
-.w-line{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
+.w-line{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
 .w-inner{display:inline-block;transform:translateY(115%);will-change:transform}
 .no-motion .w-inner{transform:none}
 .ticker{display:flex;gap:3.5rem;width:max-content;animation:tick 30s linear infinite}
@@ -162,4 +162,17 @@ input,select,textarea{color-scheme:dark}
   .reveal{opacity:1;transform:none}
   .ticker{animation:none}
   #cursor{display:none}
+}
+
+/* ---- Responsive + spacing hardening (v2.0.1) ---- */
+fieldset{border:0;margin:0;padding:0;min-width:0} /* kill UA fieldset gutter */
+legend{padding:0}
+img{max-width:100%;height:auto}
+.check-pill{min-height:44px;display:flex;align-items:center;gap:.5rem} /* 44px touch target */
+.watermark{max-width:100%;overflow:hidden;white-space:nowrap;font-size:clamp(3rem,12.5vw,11rem)}
+@media (max-width:640px){
+  .field{font-size:16px} /* stop iOS focus-zoom */
+  .ticker{gap:2rem}
+  .nav-link{padding:.55rem .7rem}
+  section{scroll-margin-top:90px}
 }
