@@ -1,5 +1,9 @@
 # MMinds — Growth Engineering Website
 
+[![Deploy to Vercel](https://github.com/kushik12debnath-bit/mminds-website/actions/workflows/deploy.yml/badge.svg)](https://mminds-website.vercel.app)
+
+**Live:** https://mminds-website.vercel.app — auto-deploys from `main` on every push.
+
 Industrial-grade dark agency site. **No build step** — open any page directly.
 
 ## Stack
