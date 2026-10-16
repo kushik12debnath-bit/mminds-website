@@ -239,8 +239,7 @@
           scrollTrigger:{trigger:el.closest('section')||el,
             start:'top bottom',end:'bottom top',scrub:1}});
       });
-      $$('.ticker').forEach(t=>gsap.to(t,{xPercent:-8,ease:'none',
-        scrollTrigger:{trigger:t,start:'top bottom',end:'bottom top',scrub:2}}));
+      /* ticker drift handled by pure CSS keyframes (no GSAP transform conflict) */
     }
   }else $$('.w-inner').forEach(w=>w.style.transform='none');
 

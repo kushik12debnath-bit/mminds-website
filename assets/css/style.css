@@ -168,6 +168,8 @@ input,select,textarea{color-scheme:dark}
 fieldset{border:0;margin:0;padding:0;min-width:0} /* kill UA fieldset gutter */
 legend{padding:0}
 img{max-width:100%;height:auto}
+.nav-link{white-space:nowrap}
+.nav-pill .btn{flex-shrink:0}
 .check-pill{min-height:44px;display:flex;align-items:center;gap:.5rem} /* 44px touch target */
 .watermark{max-width:100%;overflow:hidden;white-space:nowrap;font-size:clamp(3rem,12.5vw,11rem)}
 @media (max-width:640px){
