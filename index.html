@@ -3,175 +3,179 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MMinds — Scale Your Revenue with High-Precision Growth Engineering</title>
-<meta name="description" content="MMinds is a digital growth firm engineering revenue with Performance Marketing, SEO & AEO. Audits, full-funnel builds, scaling systems. Book a free strategy audit.">
-<meta property="og:title" content="MMinds — High-Precision Growth Engineering"><meta property="og:description" content="Performance Marketing • SEO • AEO. We turn traffic into revenue."><meta property="og:type" content="website">
+<meta name="description" content="MMinds is a digital growth firm engineering revenue with Performance Marketing, SEO & AEO. Forensic audits, full-funnel builds, compounding scale. Book a free strategy audit.">
+<meta property="og:title" content="MMinds — High-Precision Growth Engineering">
+<meta property="og:description" content="Performance Marketing · SEO · AEO. We turn traffic into revenue.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{obsidian:'#060a14',slate2:'#0a1120',card:'#0d1528'},fontFamily:{display:['Outfit','sans-serif'],body:['Inter','sans-serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{colors:{void:'#090a0f',panel:'#0d0f14'},fontFamily:{display:['Syne','sans-serif'],body:['Inter','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
 <link rel="stylesheet" href="assets/css/style.css">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
 <script defer src="https://unpkg.com/lenis@1.3.27/dist/lenis.min.js"></script>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>M</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%236366f1'/><text x='50' y='70' font-size='54' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>M</text></svg>">
 </head>
-<body class="bg-obsidian font-body">
+<body data-page="home" class="bg-void font-body antialiased">
 <div id="progress" aria-hidden="true"></div>
 <div id="ambient" aria-hidden="true"><i class="a-base"></i><i class="a-indigo"></i><i class="a-emerald"></i></div>
 <div id="cursor" aria-hidden="true"></div>
 
-<!-- NAV -->
-<header id="navbar" class="nav-blur fixed top-0 inset-x-0 z-50 transition-all">
-<nav class="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between" aria-label="Main">
-<a href="index.html" class="flex items-center gap-2.5">
-<span class="w-9 h-9 rounded-xl grid place-items-center font-display font-800 font-bold text-lg text-white" style="background:linear-gradient(135deg,#3b82f6,#6366f1)">M</span>
-<span class="font-display font-bold text-xl tracking-tight">MMinds<span class="text-emerald-400">.</span></span></a>
-<div class="hidden md:flex items-center gap-8 text-sm text-slate-300">
-<a href="index.html" class="link-underline active text-white">Home</a>
-<a href="services.html" class="link-underline hover:text-white">Services</a>
-<a href="about.html" class="link-underline hover:text-white">Team</a>
-<a href="contact.html" class="link-underline hover:text-white">Contact</a></div>
-<div class="hidden md:flex items-center gap-3">
-<a href="contact.html" class="btn-ghost text-sm px-4 py-2.5 rounded-xl text-slate-200">Book a Call</a>
-<button data-open-audit class="btn-primary text-sm font-semibold px-5 py-2.5 rounded-xl text-white">Get Free Audit →</button></div>
-<button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/10" aria-expanded="false" aria-label="Menu">☰</button>
-</nav>
-<div id="mobileMenu" class="hidden md:hidden glass border-t border-white/10 px-6 py-5 space-y-4 text-slate-200">
-<a href="index.html" class="block">Home</a><a href="services.html" class="block">Services</a><a href="about.html" class="block">Team</a><a href="contact.html" class="block">Contact</a>
-<button data-open-audit class="btn-primary w-full py-3 rounded-xl font-semibold text-white">Get Free Audit →</button>
-</div></header>
+<!-- ═══ Floating glass navbar ═══ -->
+<div class="nav-shell">
+<nav id="navPill" class="nav-pill glass" aria-label="Main">
+<a href="index.html" class="flex items-center gap-2.5 pr-2" aria-label="MMinds home">
+<span class="w-9 h-9 rounded-xl grid place-items-center font-display font-bold text-lg text-white" style="background:linear-gradient(135deg,#6366f1,#06b6d4)">M</span>
+<span class="font-display font-bold text-lg tracking-tight text-white hidden sm:block">MMinds<span class="text-emerald-400">.</span></span></a>
+<div class="hidden md:flex items-center">
+<a data-nav="home" href="index.html" class="nav-link"><span class="dot"></span>Home</a>
+<a data-nav="services" href="services.html" class="nav-link"><span class="dot"></span>Services</a>
+<a data-nav="about" href="about.html" class="nav-link"><span class="dot"></span>Studio</a>
+<a data-nav="contact" href="contact.html" class="nav-link"><span class="dot"></span>Contact</a></div>
+<div class="flex-1 md:hidden"></div>
+<a href="contact.html" class="btn btn-ghost text-sm px-4 py-2 hidden sm:inline-flex">Book a Call</a>
+<button data-open-audit class="btn btn-primary text-sm px-4 py-2">Get Audit →</button>
+<button id="menuBtn" class="md:hidden p-2 ml-1 rounded-lg border border-white/10 text-slate-200" aria-expanded="false" aria-label="Open menu">☰</button>
+</nav></div>
+<div id="mobileMenu" class="hidden fixed top-[76px] inset-x-4 z-50 glass card p-5 space-y-1 md:hidden">
+<a href="index.html" class="block py-2.5 px-3 rounded-lg text-white bg-white/5">Home</a>
+<a href="services.html" class="block py-2.5 px-3 rounded-lg">Services</a>
+<a href="about.html" class="block py-2.5 px-3 rounded-lg">Studio</a>
+<a href="contact.html" class="block py-2.5 px-3 rounded-lg">Contact</a></div>
 
-<!-- HERO -->
-<section data-theme="obsidian" class="relative pt-[130px] md:pt-[160px] pb-14 overflow-hidden">
+<main>
+<!-- ═══ HERO ═══ -->
+<section data-theme="obsidian" class="relative overflow-hidden noise" style="padding-top:clamp(7.5rem,12vw,10rem)">
 <canvas id="stars" aria-hidden="true"></canvas>
 <div class="mesh" data-parallax="0.12"></div><div class="absolute inset-0 grid-bg"></div>
-<div class="relative max-w-7xl mx-auto px-5 md:px-8 text-center">
-<div class="reveal inline-flex items-center gap-2 pill rounded-full px-4 py-1.5 text-xs text-slate-300 mb-6">
-<span class="w-2 h-2 rounded-full bg-emerald-400 glow-dot text-emerald-400"></span> Accepting 4 new growth partners this quarter <span class="text-slate-500">•</span> <span class="text-white font-semibold">Free audit</span></div>
-<h1 data-split class="reveal font-display font-extrabold text-[2.6rem] leading-[1.02] md:text-7xl max-w-4xl mx-auto">Scale Your Revenue with <span class="text-transparent bg-clip-text" style="background-image:linear-gradient(90deg,#60a5fa,#818cf8,#34d399)">High-Precision Growth Engineering</span></h1>
-<p class="reveal reveal-d1 text-slate-400 max-w-2xl mx-auto mt-6 text-base md:text-lg">MMinds builds full-funnel revenue systems across <strong class="text-slate-200">Paid Media, SEO &amp; AEO</strong> — tracking, creative, content and authority engineered into one compounding growth machine.</p>
-<div class="reveal reveal-d2 flex flex-col sm:flex-row gap-3 justify-center mt-8">
-<a href="contact.html" data-magnetic class="btn-primary px-7 py-3.5 rounded-2xl font-semibold text-white">Book a Strategy Call →</a>
-<a href="services.html" data-magnetic class="btn-ghost px-7 py-3.5 rounded-2xl font-semibold text-slate-100">Explore Services</a></div>
-<div class="reveal reveal-d3 flex flex-wrap justify-center gap-x-8 gap-y-3 mt-8 text-sm text-slate-400">
-<span>✓ No retainers pushed</span><span>✓ Senior operators only</span><span>✓ Tracking-first builds</span></div>
-<!-- metrics -->
-<div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mt-12 text-left">
-<div class="reveal card p-5 md:p-6"><p class="font-display text-3xl md:text-4xl font-bold"><span data-count="4.8" data-decimals="1" data-suffix="x">0</span></p><p class="text-slate-400 text-sm mt-1">Avg. blended ROAS across scaling accounts</p></div>
-<div class="reveal reveal-d1 card p-5 md:p-6"><p class="font-display text-3xl md:text-4xl font-bold"><span data-count="120" data-suffix="M+">0</span></p><p class="text-slate-400 text-sm mt-1">Ad impressions engineered &amp; optimized</p></div>
-<div class="reveal reveal-d2 card p-5 md:p-6"><p class="font-display text-3xl md:text-4xl font-bold"><span data-count="340" data-suffix="%">0</span></p><p class="text-slate-400 text-sm mt-1">Avg. organic traffic lift in 6 months</p></div>
-<div class="reveal reveal-d3 card p-5 md:p-6"><p class="font-display text-3xl md:text-4xl font-bold"><span data-count="92" data-suffix="%">0</span></p><p class="text-slate-400 text-sm mt-1">Client retention across engagements</p></div></div>
+<div class="relative max-w-6xl mx-auto px-5 md:px-8 text-center">
+<p class="reveal mono text-cyan-300 mb-6"><span class="tag !text-cyan-300 !border-cyan-400/30">● Systems online — accepting 4 partners</span></p>
+<h1 data-split class="display max-w-5xl mx-auto">Scale revenue with high-precision <span class="grad-text">growth engineering.</span></h1>
+<p class="reveal lead text-slate-400 max-w-2xl mx-auto mt-7">MMinds builds full-funnel revenue systems across <strong class="text-slate-100 font-semibold">Paid Media, SEO &amp; Answer Engines</strong> — tracking, creative, content and authority compounded into one machine.</p>
+<div class="reveal flex flex-col sm:flex-row gap-3 justify-center mt-9">
+<a data-magnetic href="contact.html" class="btn btn-primary px-8 py-4 text-[15px]">Book a Strategy Call →</a>
+<a data-magnetic href="services.html" class="btn btn-ghost px-8 py-4 text-[15px]">Explore Services</a></div>
+<div class="reveal flex flex-wrap justify-center gap-2 mt-9">
+<span class="tag">✓ Senior operators</span><span class="tag">✓ Tracking-first builds</span><span class="tag">✓ Weekly sprints</span></div>
+<!-- Metrics band -->
+<dl class="grid grid-cols-2 lg:grid-cols-4 gap-3 mt-14 text-left">
+<div class="reveal card noise p-6"><dt class="mono text-slate-500 mb-2">01 / Blended ROAS</dt><dd class="font-display text-4xl font-bold text-white"><span data-count="4.8" data-decimals="1" data-suffix="x">0</span></dd><dd class="text-sm mt-1">Across scaling ad accounts</dd></div>
+<div class="reveal reveal-d1 card noise p-6"><dt class="mono text-slate-500 mb-2">02 / Impressions</dt><dd class="font-display text-4xl font-bold text-white"><span data-count="120" data-suffix="M+">0</span></dd><dd class="text-sm mt-1">Engineered &amp; optimized</dd></div>
+<div class="reveal reveal-d2 card noise p-6"><dt class="mono text-slate-500 mb-2">03 / Organic lift</dt><dd class="font-display text-4xl font-bold text-white"><span data-count="340" data-suffix="%">0</span></dd><dd class="text-sm mt-1">Avg. traffic lift / 6 mo</dd></div>
+<div class="reveal reveal-d3 card noise p-6"><dt class="mono text-slate-500 mb-2">04 / Retention</dt><dd class="font-display text-4xl font-bold text-white"><span data-count="92" data-suffix="%">0</span></dd><dd class="text-sm mt-1">Client retention rate</dd></div></dl>
 </div>
-<!-- logo ticker -->
-<div class="relative mt-12 border-y border-white/5 py-5 overflow-hidden">
-<p class="text-[11px] tracking-[.25em] text-slate-500 text-center mb-4">TRUSTED BY OPERATORS AT</p>
-<div class="ticker text-slate-500 font-display font-bold text-lg" aria-hidden="true">
+<div class="relative mt-14 border-y border-white/5 py-5 overflow-hidden">
+<p class="mono text-slate-600 text-center mb-4">Trusted by operators at</p>
+<div class="ticker font-display font-bold text-lg text-slate-600" aria-hidden="true">
 <span>NOVAPAY ◆</span><span>Loomify ◆</span><span>URBANSTACK ◆</span><span>Kartlane ◆</span><span>FinEdge ◆</span><span>MediKart ◆</span><span>SkillOrbit ◆</span><span>HomeNest ◆</span>
 <span>NOVAPAY ◆</span><span>Loomify ◆</span><span>URBANSTACK ◆</span><span>Kartlane ◆</span><span>FinEdge ◆</span><span>MediKart ◆</span><span>SkillOrbit ◆</span><span>HomeNest ◆</span>
 </div></div>
 </section>
 
-<!-- SERVICES BENTO -->
-<section data-theme="indigo" class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
-<div class="reveal flex items-end justify-between flex-wrap gap-4 mb-8">
-<div><p class="text-xs tracking-[.25em] text-blue-400 font-semibold mb-3">● CORE GROWTH STACK</p>
-<h2 class="font-display font-bold text-3xl md:text-5xl">One firm. Three<br>compounding engines.</h2></div>
-<a href="services.html" class="btn-ghost px-5 py-2.5 rounded-xl text-sm">View all services →</a></div>
+<!-- ═══ BENTO SERVICES ═══ -->
+<section data-theme="indigo" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+<div class="reveal flex items-end justify-between flex-wrap gap-4 mb-10">
+<div><p class="mono text-indigo-300 mb-4">[ 01 — Growth stack ]</p>
+<h2 class="h1">One firm. Three<br>compounding <span class="grad-text">engines.</span></h2></div>
+<a href="services.html" class="btn btn-ghost px-5 py-2.5 text-sm">All services →</a></div>
 <div class="grid md:grid-cols-3 gap-4">
-<article class="reveal card bento-hover p-7 relative overflow-hidden">
-<div class="absolute -top-16 -right-16 w-48 h-48 rounded-full" style="background:radial-gradient(circle,#3b82f655,transparent 70%)"></div>
-<div class="w-11 h-11 rounded-xl grid place-items-center text-xl mb-5" style="background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3)">◈</div>
-<h3 class="font-display font-bold text-2xl mb-2">Performance Marketing</h3>
-<p class="text-slate-400 text-sm leading-relaxed">Full-funnel Meta + Google builds with CAPI, catalog feeds and creative testing loops tuned for ROAS &amp; LTV.</p>
-<div class="flex flex-wrap gap-2 mt-5 text-xs">
-<span class="pill rounded-full px-3 py-1">Meta + Google Ads</span><span class="pill rounded-full px-3 py-1">CAPI &amp; Server-side</span><span class="pill rounded-full px-3 py-1">Retargeting</span></div>
-<a href="services.html#performance" class="inline-block mt-6 text-sm font-semibold text-blue-400">Explore →</a></article>
-<article class="reveal reveal-d1 card bento-hover p-7 relative overflow-hidden">
-<div class="absolute -top-16 -right-16 w-48 h-48 rounded-full" style="background:radial-gradient(circle,#10b98155,transparent 70%)"></div>
-<div class="w-11 h-11 rounded-xl grid place-items-center text-xl mb-5" style="background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.3)">⬢</div>
-<h3 class="font-display font-bold text-2xl mb-2">SEO</h3>
-<p class="text-slate-400 text-sm leading-relaxed">Technical fixes, semantic content silos, internal linking and digital PR that compound into rank dominance.</p>
-<div class="flex flex-wrap gap-2 mt-5 text-xs">
-<span class="pill rounded-full px-3 py-1">Technical SEO</span><span class="pill rounded-full px-3 py-1">Content authority</span><span class="pill rounded-full px-3 py-1">Link building</span></div>
-<a href="services.html#seo" class="inline-block mt-6 text-sm font-semibold text-emerald-400">Explore →</a></article>
-<article class="reveal reveal-d2 card bento-hover p-7 relative overflow-hidden">
-<div class="absolute -top-16 -right-16 w-48 h-48 rounded-full" style="background:radial-gradient(circle,#6366f155,transparent 70%)"></div>
-<div class="w-11 h-11 rounded-xl grid place-items-center text-xl mb-5" style="background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.35)">✦</div>
-<h3 class="font-display font-bold text-2xl mb-2">AEO <span class="text-xs align-middle ml-1 pill rounded-full px-2 py-0.5 text-indigo-300">AI SEARCH</span></h3>
-<p class="text-slate-400 text-sm leading-relaxed">Get cited by ChatGPT, Gemini, Perplexity &amp; SGE with entity graphs, FAQ schema and answer-first content.</p>
-<div class="flex flex-wrap gap-2 mt-5 text-xs">
-<span class="pill rounded-full px-3 py-1">SGE / Gemini</span><span class="pill rounded-full px-3 py-1">JSON-LD entities</span><span class="pill rounded-full px-3 py-1">Zero-click wins</span></div>
-<a href="services.html#aeo" class="inline-block mt-6 text-sm font-semibold text-indigo-300">Explore →</a></article>
+<article class="reveal card lift noise p-8 overflow-hidden">
+<div class="orb w-52 h-52 -top-16 -right-16" style="background:rgba(99,102,241,.28)"></div>
+<p class="mono text-indigo-300 mb-5">S.01 / Paid</p>
+<h3 class="h3 mb-3">Performance Marketing</h3>
+<p class="text-[15px]">Full-funnel Meta + Google builds with CAPI, catalog feeds and creative testing loops tuned for ROAS &amp; LTV.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="tag">Meta + Google</span><span class="tag">CAPI</span><span class="tag">Retargeting</span></div>
+<a href="services.html#performance" class="inline-block mt-7 text-sm font-semibold text-indigo-300 hover:text-white transition">Explore →</a></article>
+<article class="reveal reveal-d1 card lift noise p-8 overflow-hidden">
+<div class="orb w-52 h-52 -top-16 -right-16" style="background:rgba(16,185,129,.22)"></div>
+<p class="mono text-emerald-300 mb-5">S.02 / Organic</p>
+<h3 class="h3 mb-3">Search Optimization</h3>
+<p class="text-[15px]">Technical fixes, semantic silos, internal linking and digital PR that compound into rank dominance.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="tag">Technical SEO</span><span class="tag">Silos</span><span class="tag">Digital PR</span></div>
+<a href="services.html#seo" class="inline-block mt-7 text-sm font-semibold text-emerald-300 hover:text-white transition">Explore →</a></article>
+<article class="reveal reveal-d2 card lift noise p-8 overflow-hidden">
+<div class="orb w-52 h-52 -top-16 -right-16" style="background:rgba(6,182,212,.22)"></div>
+<p class="mono text-cyan-300 mb-5">S.03 / AI Search</p>
+<h3 class="h3 mb-3">Answer Engineering <span class="tag !text-cyan-300 ml-1">New</span></h3>
+<p class="text-[15px]">Get cited by ChatGPT, Gemini, Perplexity &amp; SGE with entity graphs, FAQ schema and answer-first content.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="tag">SGE / Gemini</span><span class="tag">JSON-LD</span><span class="tag">Zero-click</span></div>
+<a href="services.html#aeo" class="inline-block mt-7 text-sm font-semibold text-cyan-300 hover:text-white transition">Explore →</a></article>
 </div></section>
 
-<!-- PROCESS -->
-<section data-theme="emerald" class="border-y border-white/5" style="background:linear-gradient(180deg,rgba(10,17,32,.82),rgba(6,10,20,.88))">
-<div class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
-<p class="reveal text-xs tracking-[.25em] text-emerald-400 font-semibold mb-3">● THE MMinds OPERATING SYSTEM</p>
-<h2 class="reveal font-display font-bold text-3xl md:text-5xl mb-10">Audit → Setup → Scale → Dominance</h2>
-<div class="grid md:grid-cols-4 gap-4">
-<div class="reveal card p-6"><p class="font-display text-blue-400 font-bold text-sm mb-3">01 — AUDIT</p><h3 class="font-semibold text-lg mb-2">Forensic teardown</h3><p class="text-slate-400 text-sm">Tracking gaps, funnel leaks, wasted spend, keyword &amp; citation gaps. You get a prioritized action map in 48 hours.</p></div>
-<div class="reveal reveal-d1 card p-6"><p class="font-display text-indigo-300 font-bold text-sm mb-3">02 — SETUP</p><h3 class="font-semibold text-lg mb-2">Infrastructure build</h3><p class="text-slate-400 text-sm">CAPI + pixels, catalog feeds, campaign architecture, technical SEO fixes, schema &amp; content systems.</p></div>
-<div class="reveal reveal-d2 card p-6"><p class="font-display text-cyan-300 font-bold text-sm mb-3">03 — SCALE</p><h3 class="font-semibold text-lg mb-2">Test &amp; compound</h3><p class="text-slate-400 text-sm">Creative sprints, LAL + algorithmic scaling, budget reallocation, authority content &amp; PR velocity.</p></div>
-<div class="reveal reveal-d3 card p-6" style="border-color:rgba(16,185,129,.35)"><p class="font-display text-emerald-400 font-bold text-sm mb-3">04 — DOMINANCE</p><h3 class="font-semibold text-lg mb-2">Own the category</h3><p class="text-slate-400 text-sm">Defend ROAS, own page 1 + AI answers, expand LTV &amp; retention. Monthly KPI dashboard keeps it honest.</p></div></div>
+<!-- ═══ FRAMEWORK ═══ -->
+<section data-theme="emerald" class="border-y border-white/5 dots" style="background:linear-gradient(180deg,rgba(13,15,20,.85),rgba(9,10,15,.92))">
+<div class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+<p class="reveal mono text-emerald-300 mb-4">[ 02 — Operating system ]</p>
+<h2 class="reveal h1 mb-4">Audit → Setup → Scale → <span class="grad-text">Dominance.</span></h2>
+<p class="reveal text-slate-400 max-w-xl mb-12">One protocol runs every engagement. No black boxes — each phase ships artifacts you keep.</p>
+<ol class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<li class="reveal card noise p-7"><p class="mono text-indigo-300 mb-4">Phase / 01</p><h3 class="font-display font-bold text-xl text-white mb-2">Audit</h3><p class="text-sm">Forensic teardown of tracking, funnels, spend, keywords &amp; citations. Prioritized action map in 48 hours.</p></li>
+<li class="reveal reveal-d1 card noise p-7"><p class="mono text-cyan-300 mb-4">Phase / 02</p><h3 class="font-display font-bold text-xl text-white mb-2">Setup</h3><p class="text-sm">CAPI + pixels, catalog feeds, campaign architecture, technical SEO fixes, schema &amp; content systems.</p></li>
+<li class="reveal reveal-d2 card noise p-7"><p class="mono text-emerald-300 mb-4">Phase / 03</p><h3 class="font-display font-bold text-xl text-white mb-2">Scale</h3><p class="text-sm">Creative sprints, LAL + algorithmic scaling, budget reallocation, authority content &amp; PR velocity.</p></li>
+<li class="reveal reveal-d3 card noise p-7" style="border-color:rgba(16,185,129,.35)"><p class="mono text-emerald-300 mb-4">Phase / 04</p><h3 class="font-display font-bold text-xl text-white mb-2">Dominance</h3><p class="text-sm">Defend ROAS, own page 1 + AI answers, expand LTV. Monthly KPI dashboard keeps it honest.</p></li></ol>
 </div></section>
 
-<!-- CASE STUDIES / TESTIMONIALS -->
-<section data-theme="indigo" class="max-w-7xl mx-auto px-5 md:px-8 py-16 md:py-24">
-<p class="reveal text-xs tracking-[.25em] text-blue-400 font-semibold mb-3">● PROOF, NOT PROMISES</p>
-<h2 class="reveal font-display font-bold text-3xl md:text-5xl mb-8">Results our partners brag about</h2>
+<!-- ═══ PROOF ═══ -->
+<section data-theme="indigo" class="max-w-6xl mx-auto px-5 md:px-8 py-20 md:py-28">
+<p class="reveal mono text-indigo-300 mb-4">[ 03 — Proof, not promises ]</p>
+<h2 class="reveal h1 mb-10">Results partners <span class="grad-text">brag about.</span></h2>
 <div class="grid md:grid-cols-3 gap-4">
-<figure class="reveal card bento-hover p-7"><div class="text-amber-300 text-sm mb-3">★★★★★</div>
-<blockquote class="text-slate-200 text-[15px] leading-relaxed">“MMinds rebuilt our Meta + Google stack with proper CAPI and catalog feeds. ROAS went from shaky to predictably above 4x in 90 days.”</blockquote>
-<figcaption class="flex items-center gap-3 mt-5"><img src="https://i.pravatar.cc/80?img=12" alt="Client" class="w-10 h-10 rounded-full"><div><p class="text-sm font-semibold">Rohan Mehta</p><p class="text-xs text-slate-500">Founder, Kartlane (D2C)</p></div></figcaption>
-<div class="mt-4 pill rounded-xl px-3 py-2 text-xs text-emerald-300 inline-block">4.6x ROAS • -38% CAC</div></figure>
-<figure class="reveal reveal-d1 card bento-hover p-7"><div class="text-amber-300 text-sm mb-3">★★★★★</div>
-<blockquote class="text-slate-200 text-[15px] leading-relaxed">“Their SEO silo + digital PR took us from page 3 to top-3 for 40+ money keywords. Demo pipeline is now 60% inbound.”</blockquote>
-<figcaption class="flex items-center gap-3 mt-5"><img src="https://i.pravatar.cc/80?img=32" alt="Client" class="w-10 h-10 rounded-full"><div><p class="text-sm font-semibold">Sarah D’Souza</p><p class="text-xs text-slate-500">CMO, SkillOrbit (SaaS)</p></div></figcaption>
-<div class="mt-4 pill rounded-xl px-3 py-2 text-xs text-emerald-300 inline-block">+340% traffic • 41 keywords top-3</div></figure>
-<figure class="reveal reveal-d2 card bento-hover p-7"><div class="text-amber-300 text-sm mb-3">★★★★★</div>
-<blockquote class="text-slate-200 text-[15px] leading-relaxed">“We now get cited in Perplexity and AI Overviews for our core queries. AEO work from MMinds put us ahead of competitors twice our size.”</blockquote>
-<figcaption class="flex items-center gap-3 mt-5"><img src="https://i.pravatar.cc/80?img=56" alt="Client" class="w-10 h-10 rounded-full"><div><p class="text-sm font-semibold">Arjun Nair</p><p class="text-xs text-slate-500">Director, MediKart</p></div></figcaption>
-<div class="mt-4 pill rounded-xl px-3 py-2 text-xs text-indigo-300 inline-block">3.1x AI citations • 58 featured snippets</div></figure>
+<figure class="reveal card lift noise p-8"><div class="text-amber-300 text-sm tracking-widest mb-4" aria-label="5 star rating">★★★★★</div>
+<blockquote class="text-slate-200 text-[15px]">“MMinds rebuilt our Meta + Google stack with proper CAPI and catalog feeds. ROAS went from shaky to predictably above 4x in 90 days.”</blockquote>
+<figcaption class="flex items-center gap-3 mt-6"><img src="https://i.pravatar.cc/80?img=12" alt="Portrait of Rohan Mehta" class="w-10 h-10 rounded-full" loading="lazy"><div><p class="text-sm font-semibold text-white">Rohan Mehta</p><p class="mono !text-[.62rem] text-slate-500">Founder · Kartlane</p></div></figcaption>
+<p class="mt-5"><span class="tag !text-emerald-300 !border-emerald-400/30">4.6x ROAS · −38% CAC</span></p></figure>
+<figure class="reveal reveal-d1 card lift noise p-8"><div class="text-amber-300 text-sm tracking-widest mb-4" aria-label="5 star rating">★★★★★</div>
+<blockquote class="text-slate-200 text-[15px]">“Their SEO silo + digital PR took us from page 3 to top-3 for 40+ money keywords. Pipeline is now 60% inbound.”</blockquote>
+<figcaption class="flex items-center gap-3 mt-6"><img src="https://i.pravatar.cc/80?img=32" alt="Portrait of Sarah D'Souza" class="w-10 h-10 rounded-full" loading="lazy"><div><p class="text-sm font-semibold text-white">Sarah D’Souza</p><p class="mono !text-[.62rem] text-slate-500">CMO · SkillOrbit</p></div></figcaption>
+<p class="mt-5"><span class="tag !text-emerald-300 !border-emerald-400/30">+340% traffic · 41 KW top-3</span></p></figure>
+<figure class="reveal reveal-d2 card lift noise p-8"><div class="text-amber-300 text-sm tracking-widest mb-4" aria-label="5 star rating">★★★★★</div>
+<blockquote class="text-slate-200 text-[15px]">“We now get cited in Perplexity and AI Overviews for our core queries — ahead of competitors twice our size.”</blockquote>
+<figcaption class="flex items-center gap-3 mt-6"><img src="https://i.pravatar.cc/80?img=56" alt="Portrait of Arjun Nair" class="w-10 h-10 rounded-full" loading="lazy"><div><p class="text-sm font-semibold text-white">Arjun Nair</p><p class="mono !text-[.62rem] text-slate-500">Director · MediKart</p></div></figcaption>
+<p class="mt-5"><span class="tag !text-cyan-300 !border-cyan-400/30">3.1x AI citations · 58 snippets</span></p></figure>
 </div></section>
 
-<!-- CTA -->
-<section class="max-w-7xl mx-auto px-5 md:px-8 pb-20">
-<div class="reveal relative overflow-hidden rounded-3xl p-8 md:p-14 text-center border border-white/10" style="background:linear-gradient(135deg,#12224d,#1a1350 55%,#052e26)">
-<div class="mesh mesh-indigo"></div>
-<div class="relative"><h2 data-split class="font-display font-bold text-3xl md:text-5xl">Get a free growth audit<br>worth a quarter of guesswork.</h2>
-<p class="text-slate-300 mt-4 max-w-xl mx-auto">A senior strategist tears down your ads, SEO &amp; AI visibility and hands you a 90-day roadmap — free, no strings.</p>
-<div class="flex flex-col sm:flex-row gap-3 justify-center mt-8">
-<a href="contact.html" class="btn-primary px-8 py-3.5 rounded-2xl font-semibold text-white">Book a Strategy Call</a>
-<button data-open-audit class="btn-ghost px-8 py-3.5 rounded-2xl font-semibold">Claim Free Audit</button></div>
-<p class="text-xs text-slate-400 mt-4">48-hour turnaround • No lock-ins • Senior team only</p></div></div></section>
+<!-- ═══ CONVERSION BANNER ═══ -->
+<section class="max-w-6xl mx-auto px-5 md:px-8 pb-24">
+<div class="reveal relative overflow-hidden rounded-3xl p-10 md:p-16 text-center border border-white/10 noise" style="background:linear-gradient(135deg,#151a45,#121031 55%,#04231c)">
+<div class="mesh"></div>
+<div class="relative">
+<p class="mono text-cyan-300 mb-4">[ Free · 48-hour turnaround ]</p>
+<h2 data-split class="h1">A free growth audit worth a quarter of guesswork.</h2>
+<p class="text-slate-300 mt-5 max-w-xl mx-auto">A senior strategist tears down your ads, SEO &amp; AI visibility and hands you a 90-day roadmap. No strings.</p>
+<div class="flex flex-col sm:flex-row gap-3 justify-center mt-9">
+<a data-magnetic href="contact.html" class="btn btn-primary px-9 py-4 text-[15px]">Book a Strategy Call</a>
+<button data-open-audit data-magnetic class="btn btn-ghost px-9 py-4 text-[15px]">Claim Free Audit</button></div>
+<p class="mono !text-[.62rem] text-slate-500 mt-6">No lock-ins · Senior team only · NDA friendly</p></div></div></section>
+</main>
 
-<!-- FOOTER -->
-<footer class="border-t border-white/10 bg-[#04070f]">
-<div class="max-w-7xl mx-auto px-5 md:px-8 py-14 grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1.4fr]">
-<div><div class="flex items-center gap-2.5 mb-4"><span class="w-9 h-9 rounded-xl grid place-items-center font-display font-bold text-lg text-white" style="background:linear-gradient(135deg,#3b82f6,#6366f1)">M</span><span class="font-display font-bold text-xl">MMinds<span class="text-emerald-400">.</span></span></div>
-<p class="text-slate-400 text-sm max-w-xs">High-precision growth engineering: Performance Marketing, SEO &amp; AEO for brands that want revenue, not reports.</p>
-<div class="flex gap-2 mt-5">
-<a href="#" aria-label="X" class="btn-ghost w-9 h-9 grid place-items-center rounded-lg text-slate-300">𝕏</a>
-<a href="#" aria-label="LinkedIn" class="btn-ghost w-9 h-9 grid place-items-center rounded-lg text-slate-300">in</a>
-<a href="#" aria-label="Instagram" class="btn-ghost w-9 h-9 grid place-items-center rounded-lg text-slate-300">◍</a>
-<a href="#" aria-label="YouTube" class="btn-ghost w-9 h-9 grid place-items-center rounded-lg text-slate-300">▶</a></div></div>
-<div><p class="text-sm font-semibold mb-4">Sitemap</p><ul class="space-y-2.5 text-sm text-slate-400"><li><a class="hover:text-white" href="index.html">Home</a></li><li><a class="hover:text-white" href="services.html">Services</a></li><li><a class="hover:text-white" href="about.html">Team</a></li><li><a class="hover:text-white" href="contact.html">Contact</a></li></ul></div>
-<div><p class="text-sm font-semibold mb-4">Services</p><ul class="space-y-2.5 text-sm text-slate-400"><li><a class="hover:text-white" href="services.html#performance">Performance Marketing</a></li><li><a class="hover:text-white" href="services.html#seo">SEO</a></li><li><a class="hover:text-white" href="services.html#aeo">AEO</a></li><li><a class="hover:text-white" href="contact.html">Free Audit</a></li></ul></div>
-<div><p class="text-sm font-semibold mb-4">Growth Brief — monthly, no spam</p>
-<form id="nlForm" class="flex gap-2" novalidate><input type="email" required placeholder="you@company.com" class="field !py-2.5 text-sm" aria-label="Email"><button class="btn-primary px-4 rounded-xl text-white font-semibold text-sm">→</button></form>
-<p id="nlOk" class="hidden text-emerald-400 text-xs mt-2">✓ Subscribed. Check your inbox.</p>
-<p class="text-xs text-slate-500 mt-3">One tactical teardown per month. Unsubscribe anytime.</p></div></div>
-<div class="border-t border-white/5"><div class="max-w-7xl mx-auto px-5 md:px-8 py-5 flex flex-col md:flex-row justify-between gap-2 text-xs text-slate-500"><p>© <span id="year"></span> MMinds Growth Pvt. Ltd. All rights reserved.</p><p>Privacy • Terms • Crafted for revenue.</p></div></div></footer>
+<!-- ═══ MEGA FOOTER ═══ -->
+<footer class="border-t border-white/10" style="background:#05060a">
+<div class="max-w-6xl mx-auto px-5 md:px-8 pt-16 pb-8">
+<div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1.5fr]">
+<div><div class="flex items-center gap-2.5 mb-5"><span class="w-9 h-9 rounded-xl grid place-items-center font-display font-bold text-lg text-white" style="background:linear-gradient(135deg,#6366f1,#06b6d4)">M</span><span class="font-display font-bold text-xl text-white">MMinds<span class="text-emerald-400">.</span></span></div>
+<p class="text-sm max-w-xs">High-precision growth engineering — Performance Marketing, SEO &amp; AEO for brands that want revenue, not reports.</p>
+<p class="mono !text-[.62rem] text-slate-500 mt-6 flex items-center gap-2"><span class="pulse"></span>All growth systems operational</p></div>
+<nav aria-label="Sitemap"><p class="mono text-slate-500 mb-5">Sitemap</p><ul class="space-y-3 text-sm"><li><a class="hover:text-white transition" href="index.html">Home</a></li><li><a class="hover:text-white transition" href="services.html">Services</a></li><li><a class="hover:text-white transition" href="about.html">Studio</a></li><li><a class="hover:text-white transition" href="contact.html">Contact</a></li></ul></nav>
+<nav aria-label="Services"><p class="mono text-slate-500 mb-5">Engines</p><ul class="space-y-3 text-sm"><li><a class="hover:text-white transition" href="services.html#performance">Performance Marketing</a></li><li><a class="hover:text-white transition" href="services.html#seo">SEO</a></li><li><a class="hover:text-white transition" href="services.html#aeo">AEO</a></li><li><a class="hover:text-white transition" href="contact.html">Free Audit</a></li></ul></nav>
+<div><p class="mono text-slate-500 mb-5">Growth brief — monthly</p>
+<form id="nlForm" class="flex gap-2" novalidate><input type="email" required placeholder="you@company.com" class="field !py-2.5 text-sm" aria-label="Email address"><button class="btn btn-primary px-4 text-white font-semibold" aria-label="Subscribe">→</button></form>
+<p id="nlOk" class="hidden text-emerald-400 text-xs mt-2">✓ Subscribed. Welcome to Growth Brief.</p>
+<div class="flex gap-2 mt-6">
+<a href="#" aria-label="X (Twitter)" class="btn btn-ghost w-9 h-9 !rounded-lg text-slate-300">𝕏</a>
+<a href="#" aria-label="LinkedIn" class="btn btn-ghost w-9 h-9 !rounded-lg text-slate-300">in</a>
+<a href="#" aria-label="Instagram" class="btn btn-ghost w-9 h-9 !rounded-lg text-slate-300">◍</a>
+<a href="#" aria-label="YouTube" class="btn btn-ghost w-9 h-9 !rounded-lg text-slate-300">▶</a></div></div></div>
+<div class="watermark mt-14" aria-hidden="true">MMINDS</div>
+<div class="border-t border-white/5 mt-6 pt-6 flex flex-col md:flex-row justify-between gap-2 text-xs text-slate-600"><p>© <span id="year"></span> MMinds Growth Pvt. Ltd. All rights reserved.</p><p class="font-mono">Privacy · Terms · Crafted for revenue.</p></div></div></footer>
 
-<!-- AUDIT MODAL -->
-<div id="auditModal" class="hidden fixed inset-0 z-[60] grid place-items-center p-4" style="background:rgba(0,0,0,.7);backdrop-filter:blur(6px)" role="dialog" aria-modal="true">
-<div class="card max-w-md w-full p-8 relative" style="background:#0b1326">
-<button id="auditClose" class="absolute top-4 right-4 text-slate-400 hover:text-white" aria-label="Close">✕</button>
-<h3 class="font-display font-bold text-2xl mb-2">Claim your free audit</h3>
-<p class="text-slate-400 text-sm mb-5">We’ll reply within one business day with your teardown slot.</p>
-<form id="nlForm" class="space-y-3" onsubmit="event.preventDefault();this.reset();document.getElementById('auditClose').click();alert('Audit request received. Check your inbox shortly.');">
-<input required placeholder="Name" class="field text-sm"><input required type="email" placeholder="Work email" class="field text-sm"><input placeholder="Website URL" class="field text-sm">
-<a href="contact.html" class="btn-primary block text-center py-3 rounded-xl font-semibold text-white">Continue to booking →</a></form></div></div>
+<!-- ═══ Audit modal ═══ -->
+<div id="auditModal" class="hidden fixed inset-0 z-[60] grid place-items-center p-4" style="background:rgba(0,0,0,.72);backdrop-filter:blur(6px)" role="dialog" aria-modal="true" aria-label="Claim free audit">
+<div class="card noise max-w-md w-full p-8 relative" style="background:#0c0e15">
+<button id="auditClose" class="absolute top-4 right-4 text-slate-400 hover:text-white transition" aria-label="Close dialog">✕</button>
+<p class="mono text-cyan-300 mb-3">[ Limited slots ]</p>
+<h3 class="font-display font-bold text-2xl text-white mb-2">Claim your free audit</h3>
+<p class="text-sm mb-6">A senior strategist replies within one business day with your teardown slot.</p>
+<a href="contact.html" class="btn btn-primary w-full py-3.5 text-white">Continue to booking →</a></div></div>
 <script defer src="assets/js/main.js"></script>
 </body></html>

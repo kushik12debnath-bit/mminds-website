@@ -2,104 +2,126 @@
 <html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team & Mission — MMinds</title>
-<meta name="description" content="Meet the MMinds growth engineering team. Mission, values, and operators behind Performance Marketing, SEO & AEO wins.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<title>Studio — Team, Mission & Philosophy | MMinds</title>
+<meta name="description" content="Meet the MMinds growth engineering studio. Operators, not account managers — mission, philosophy, and the specialists behind Performance, SEO & AEO wins.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-<script>tailwind.config={theme:{extend:{colors:{obsidian:'#060a14'},fontFamily:{display:['Outfit','sans-serif'],body:['Inter','sans-serif']}}}}</script>
+<script>tailwind.config={theme:{extend:{colors:{void:'#090a0f',panel:'#0d0f14'},fontFamily:{display:['Syne','sans-serif'],body:['Inter','sans-serif'],mono:['JetBrains Mono','monospace']}}}}</script>
 <link rel="stylesheet" href="assets/css/style.css">
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js"></script>
 <script defer src="https://unpkg.com/lenis@1.3.27/dist/lenis.min.js"></script>
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236366f1'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>M</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%236366f1'/><text x='50' y='70' font-size='54' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>M</text></svg>">
 </head>
-<body class="bg-obsidian font-body">
+<body data-page="about" class="bg-void font-body antialiased">
 <div id="progress" aria-hidden="true"></div>
 <div id="ambient" aria-hidden="true"><i class="a-base"></i><i class="a-indigo"></i><i class="a-emerald"></i></div>
 <div id="cursor" aria-hidden="true"></div>
-<header id="navbar" class="nav-blur fixed top-0 inset-x-0 z-50 transition-all">
-<nav class="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between" aria-label="Main">
-<a href="index.html" class="flex items-center gap-2.5"><span class="w-9 h-9 rounded-xl grid place-items-center font-display font-bold text-lg text-white" style="background:linear-gradient(135deg,#3b82f6,#6366f1)">M</span><span class="font-display font-bold text-xl">MMinds<span class="text-emerald-400">.</span></span></a>
-<div class="hidden md:flex items-center gap-8 text-sm text-slate-300">
-<a href="index.html" class="link-underline hover:text-white">Home</a><a href="services.html" class="link-underline hover:text-white">Services</a><a href="about.html" class="link-underline active text-white">Team</a><a href="contact.html" class="link-underline hover:text-white">Contact</a></div>
-<div class="hidden md:flex items-center gap-3"><a href="contact.html" class="btn-ghost text-sm px-4 py-2.5 rounded-xl text-slate-200">Book a Call</a><button data-open-audit class="btn-primary text-sm font-semibold px-5 py-2.5 rounded-xl text-white">Get Free Audit →</button></div>
-<button id="menuBtn" class="md:hidden p-2 rounded-lg border border-white/10" aria-label="Menu">☰</button></nav>
-<div id="mobileMenu" class="hidden md:hidden glass border-t border-white/10 px-6 py-5 space-y-4"><a href="index.html" class="block">Home</a><a href="services.html" class="block">Services</a><a href="about.html" class="block">Team</a><a href="contact.html" class="block">Contact</a><button data-open-audit class="btn-primary w-full py-3 rounded-xl font-semibold text-white">Get Free Audit →</button></div></header>
 
-<section data-theme="obsidian" class="relative pt-[130px] md:pt-[150px] pb-12 overflow-hidden text-center">
+<div class="nav-shell">
+<nav id="navPill" class="nav-pill glass" aria-label="Main">
+<a href="index.html" class="flex items-center gap-2.5 pr-2" aria-label="MMinds home">
+<span class="w-9 h-9 rounded-xl grid place-items-center font-display font-bold text-lg text-white" style="background:linear-gradient(135deg,#6366f1,#06b6d4)">M</span>
+<span class="font-display font-bold text-lg tracking-tight text-white hidden sm:block">MMinds<span class="text-emerald-400">.</span></span></a>
+<div class="hidden md:flex items-center">
+<a data-nav="home" href="index.html" class="nav-link"><span class="dot"></span>Home</a>
+<a data-nav="services" href="services.html" class="nav-link"><span class="dot"></span>Services</a>
+<a data-nav="about" href="about.html" class="nav-link"><span class="dot"></span>Studio</a>
+<a data-nav="contact" href="contact.html" class="nav-link"><span class="dot"></span>Contact</a></div>
+<div class="flex-1 md:hidden"></div>
+<a href="contact.html" class="btn btn-ghost text-sm px-4 py-2 hidden sm:inline-flex">Book a Call</a>
+<button data-open-audit class="btn btn-primary text-sm px-4 py-2">Get Audit →</button>
+<button id="menuBtn" class="md:hidden p-2 ml-1 rounded-lg border border-white/10 text-slate-200" aria-expanded="false" aria-label="Open menu">☰</button>
+</nav></div>
+<div id="mobileMenu" class="hidden fixed top-[76px] inset-x-4 z-50 glass card p-5 space-y-1 md:hidden">
+<a href="index.html" class="block py-2.5 px-3 rounded-lg">Home</a>
+<a href="services.html" class="block py-2.5 px-3 rounded-lg">Services</a>
+<a href="about.html" class="block py-2.5 px-3 rounded-lg text-white bg-white/5">Studio</a>
+<a href="contact.html" class="block py-2.5 px-3 rounded-lg">Contact</a></div>
+
+<main>
+<section data-theme="obsidian" class="relative overflow-hidden noise text-center" style="padding-top:clamp(7.5rem,12vw,10rem)">
 <div class="mesh"></div><div class="absolute inset-0 grid-bg"></div>
-<div class="relative max-w-3xl mx-auto px-5">
-<p class="reveal text-xs tracking-[.25em] text-emerald-400 font-semibold mb-4">● WHO WE ARE</p>
-<h1 class="reveal font-display font-extrabold text-4xl md:text-6xl">Operators, not<br><span class="text-transparent bg-clip-text" style="background-image:linear-gradient(90deg,#60a5fa,#34d399)">account managers.</span></h1>
-<p class="reveal text-slate-400 mt-5">MMinds exists for one reason: turn attention into revenue with systems you can audit. No juniors learning on your budget — every account is run by a specialist with 5+ years in the trenches.</p></div></section>
+<div class="relative max-w-3xl mx-auto px-5 pb-14">
+<p class="reveal mono text-emerald-300 mb-5">[ The studio ]</p>
+<h1 data-split class="display">Operators, not <span class="grad-text">account managers.</span></h1>
+<p class="reveal lead text-slate-400 mt-6">MMinds exists for one reason: turn attention into revenue with systems you can audit. Every account is run by a specialist — never a junior learning on your budget.</p></div></section>
 
-<section data-theme="indigo" class="max-w-7xl mx-auto px-5 md:px-8 pb-8 grid md:grid-cols-2 gap-4">
-<div class="reveal card p-8"><p class="text-xs tracking-[.2em] text-blue-400 font-semibold mb-3">OUR MISSION</p><p class="font-display text-xl md:text-2xl font-semibold leading-snug">Make growth engineering accessible to every ambitious brand — measurable, compounding, and honest.</p></div>
-<div class="reveal reveal-d1 card p-8"><p class="text-xs tracking-[.2em] text-emerald-400 font-semibold mb-3">OUR VISION</p><p class="font-display text-xl md:text-2xl font-semibold leading-snug">A world where the best product wins — because its growth system is the most precise, not the loudest.</p></div></section>
+<section data-theme="indigo" class="max-w-6xl mx-auto px-5 md:px-8 pb-6 grid md:grid-cols-2 gap-4">
+<div class="reveal card noise p-9"><p class="mono text-indigo-300 mb-4">Mission / 001</p><p class="font-display text-xl md:text-2xl font-bold text-white leading-snug">Make growth engineering accessible to every ambitious brand — measurable, compounding, honest.</p></div>
+<div class="reveal reveal-d1 card noise p-9"><p class="mono text-emerald-300 mb-4">Vision / 002</p><p class="font-display text-xl md:text-2xl font-bold text-white leading-snug">A market where the best product wins — because its growth system is the most precise, not the loudest.</p></div></section>
 
-<section data-theme="emerald" class="max-w-7xl mx-auto px-5 md:px-8 py-10">
-<div class="flex items-end justify-between flex-wrap gap-3 mb-7"><h2 class="reveal font-display font-bold text-3xl md:text-4xl">The growth crew</h2><p class="reveal text-sm text-slate-500">Hover a card → LinkedIn + focus areas</p></div>
+<section data-theme="emerald" class="max-w-6xl mx-auto px-5 md:px-8 py-14">
+<div class="flex items-end justify-between flex-wrap gap-3 mb-8">
+<div><p class="reveal mono text-slate-500 mb-4">[ Leadership ]</p>
+<h2 class="reveal h1">The growth crew.</h2></div>
+<p class="reveal mono !text-[.62rem] text-slate-500">Hover a card → focus areas + LinkedIn</p></div>
 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-<!-- card template x6 -->
-<div class="reveal card bento-hover overflow-hidden group">
-<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=11" alt="Manav Mehta — Founder, Growth Strategy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.8))"><a href="#" class="pill rounded-lg px-3 py-1.5 text-xs">in LinkedIn</a><a href="contact.html" class="pill rounded-lg px-3 py-1.5 text-xs">Book slot</a></div></div>
-<div class="p-5"><p class="font-display font-bold">Manav Mehta</p><p class="text-xs text-blue-300 mt-0.5">Founder • Growth Strategy</p><p class="text-xs text-slate-500 mt-2">Ex-D2C scale-up. Full-funnel &amp; unit economics.</p></div></div>
-
-<div class="reveal reveal-d1 card bento-hover overflow-hidden group">
-<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=47" alt="Ishita Rao — Head of Performance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.8))"><a href="#" class="pill rounded-lg px-3 py-1.5 text-xs">in LinkedIn</a><a href="contact.html" class="pill rounded-lg px-3 py-1.5 text-xs">Book slot</a></div></div>
-<div class="p-5"><p class="font-display font-bold">Ishita Rao</p><p class="text-xs text-blue-300 mt-0.5">Head of Performance</p><p class="text-xs text-slate-500 mt-2">Meta + Google • CAPI • 120M+ impressions managed.</p></div></div>
-
-<div class="reveal reveal-d2 card bento-hover overflow-hidden group">
-<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=13" alt="Kabir Shah — SEO Lead" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.8))"><a href="#" class="pill rounded-lg px-3 py-1.5 text-xs">in LinkedIn</a><a href="contact.html" class="pill rounded-lg px-3 py-1.5 text-xs">Book slot</a></div></div>
-<div class="p-5"><p class="font-display font-bold">Kabir Shah</p><p class="text-xs text-emerald-300 mt-0.5">SEO &amp; Content Lead</p><p class="text-xs text-slate-500 mt-2">Technical SEO • silos • digital PR engines.</p></div></div>
-
-<div class="reveal reveal-d3 card bento-hover overflow-hidden group">
-<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=45" alt="Ananya Iyer — AEO Specialist" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.8))"><a href="#" class="pill rounded-lg px-3 py-1.5 text-xs">in LinkedIn</a><a href="contact.html" class="pill rounded-lg px-3 py-1.5 text-xs">Book slot</a></div></div>
-<div class="p-5"><p class="font-display font-bold">Ananya Iyer</p><p class="text-xs text-indigo-300 mt-0.5">AEO &amp; Entity Specialist</p><p class="text-xs text-slate-500 mt-2">SGE, Perplexity &amp; schema graphs.</p></div></div>
-
-<div class="reveal card bento-hover overflow-hidden group">
-<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=59" alt="Dev Patel — Creative Strategist" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.8))"><a href="#" class="pill rounded-lg px-3 py-1.5 text-xs">in LinkedIn</a><a href="contact.html" class="pill rounded-lg px-3 py-1.5 text-xs">Book slot</a></div></div>
-<div class="p-5"><p class="font-display font-bold">Dev Patel</p><p class="text-xs text-amber-300 mt-0.5">Creative Strategist</p><p class="text-xs text-slate-500 mt-2">Hooks, UGC systems &amp; ad iteration loops.</p></div></div>
-
-<div class="reveal reveal-d1 card bento-hover overflow-hidden group">
-<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=26" alt="Sara Thomas — Analytics Engineer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.8))"><a href="#" class="pill rounded-lg px-3 py-1.5 text-xs">in LinkedIn</a><a href="contact.html" class="pill rounded-lg px-3 py-1.5 text-xs">Book slot</a></div></div>
-<div class="p-5"><p class="font-display font-bold">Sara Thomas</p><p class="text-xs text-cyan-300 mt-0.5">Analytics Engineer</p><p class="text-xs text-slate-500 mt-2">Server-side tracking • dashboards • LTV models.</p></div></div>
-
-<div class="reveal reveal-d2 card bento-hover overflow-hidden group">
-<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=68" alt="Aditya Kulkarni — Outreach Lead" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.8))"><a href="#" class="pill rounded-lg px-3 py-1.5 text-xs">in LinkedIn</a><a href="contact.html" class="pill rounded-lg px-3 py-1.5 text-xs">Book slot</a></div></div>
-<div class="p-5"><p class="font-display font-bold">Aditya Kulkarni</p><p class="text-xs text-slate-300 mt-0.5">Digital PR &amp; Outreach</p><p class="text-xs text-slate-500 mt-2">Authority links from real publications.</p></div></div>
-
-<div class="reveal reveal-d3 card bento-hover overflow-hidden grid place-items-center p-8 text-center" style="border-style:dashed">
-<div><p class="font-display font-bold text-xl mb-2">You?</p><p class="text-sm text-slate-400 mb-4">We hire slow. Media buyers, SEOs &amp; writers who love revenue graphs.</p><a href="contact.html" class="btn-ghost px-5 py-2.5 rounded-xl text-sm inline-block">Say hello →</a></div></div>
+<div class="reveal card lift overflow-hidden group">
+<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=11" alt="Manav Mehta, Founder and Growth Strategy lead" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.85))"><a href="#" class="tag !text-white">in LinkedIn</a><a href="contact.html" class="tag !text-white">Book slot</a></div></div>
+<div class="p-5"><p class="font-display font-bold text-white">Manav Mehta</p><p class="mono !text-[.62rem] text-indigo-300 mt-1">Founder · Strategy</p><p class="text-xs mt-2">Ex-D2C scale-up. Funnels &amp; unit economics.</p></div></div>
+<div class="reveal reveal-d1 card lift overflow-hidden group">
+<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=47" alt="Ishita Rao, Head of Performance" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.85))"><a href="#" class="tag !text-white">in LinkedIn</a><a href="contact.html" class="tag !text-white">Book slot</a></div></div>
+<div class="p-5"><p class="font-display font-bold text-white">Ishita Rao</p><p class="mono !text-[.62rem] text-indigo-300 mt-1">Head of Performance</p><p class="text-xs mt-2">Meta + Google · CAPI · 120M+ impressions.</p></div></div>
+<div class="reveal reveal-d2 card lift overflow-hidden group">
+<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=13" alt="Kabir Shah, SEO and Content Lead" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.85))"><a href="#" class="tag !text-white">in LinkedIn</a><a href="contact.html" class="tag !text-white">Book slot</a></div></div>
+<div class="p-5"><p class="font-display font-bold text-white">Kabir Shah</p><p class="mono !text-[.62rem] text-emerald-300 mt-1">SEO &amp; Content</p><p class="text-xs mt-2">Technical SEO · silos · digital PR engines.</p></div></div>
+<div class="reveal reveal-d3 card lift overflow-hidden group">
+<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=45" alt="Ananya Iyer, AEO and Entity Specialist" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.85))"><a href="#" class="tag !text-white">in LinkedIn</a><a href="contact.html" class="tag !text-white">Book slot</a></div></div>
+<div class="p-5"><p class="font-display font-bold text-white">Ananya Iyer</p><p class="mono !text-[.62rem] text-cyan-300 mt-1">AEO &amp; Entities</p><p class="text-xs mt-2">SGE, Perplexity &amp; schema graphs.</p></div></div>
+<div class="reveal card lift overflow-hidden group">
+<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=59" alt="Dev Patel, Creative Strategist" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.85))"><a href="#" class="tag !text-white">in LinkedIn</a><a href="contact.html" class="tag !text-white">Book slot</a></div></div>
+<div class="p-5"><p class="font-display font-bold text-white">Dev Patel</p><p class="mono !text-[.62rem] text-amber-300 mt-1">Creative Strategy</p><p class="text-xs mt-2">Hooks, UGC systems, iteration loops.</p></div></div>
+<div class="reveal reveal-d1 card lift overflow-hidden group">
+<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=26" alt="Sara Thomas, Analytics Engineer" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.85))"><a href="#" class="tag !text-white">in LinkedIn</a><a href="contact.html" class="tag !text-white">Book slot</a></div></div>
+<div class="p-5"><p class="font-display font-bold text-white">Sara Thomas</p><p class="mono !text-[.62rem] text-cyan-300 mt-1">Analytics Engineering</p><p class="text-xs mt-2">Server-side tracking · LTV models.</p></div></div>
+<div class="reveal reveal-d2 card lift overflow-hidden group">
+<div class="relative h-64 overflow-hidden"><img src="https://i.pravatar.cc/400?img=68" alt="Aditya Kulkarni, Digital PR and Outreach Lead" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy">
+<div class="absolute inset-x-0 bottom-0 p-4 flex gap-2 opacity-0 group-hover:opacity-100 transition" style="background:linear-gradient(transparent,rgba(0,0,0,.85))"><a href="#" class="tag !text-white">in LinkedIn</a><a href="contact.html" class="tag !text-white">Book slot</a></div></div>
+<div class="p-5"><p class="font-display font-bold text-white">Aditya Kulkarni</p><p class="mono !text-[.62rem] text-slate-300 mt-1">Digital PR</p><p class="text-xs mt-2">Authority links from real publications.</p></div></div>
+<div class="reveal reveal-d3 card lift p-8 text-center grid place-items-center" style="border-style:dashed">
+<div><p class="mono text-slate-500 mb-3">[ Open role ]</p><p class="font-display font-bold text-xl text-white mb-2">You?</p><p class="text-sm mb-5">Media buyers, SEOs &amp; writers who love revenue graphs.</p><a href="contact.html" class="btn btn-ghost px-5 py-2.5 text-sm">Say hello →</a></div></div>
 </div></section>
 
-<section class="max-w-7xl mx-auto px-5 md:px-8 pb-20">
-<div class="reveal card p-8 md:p-10 grid md:grid-cols-3 gap-6">
-<div><p class="font-display font-bold text-3xl"><span data-count="40" data-suffix="+">0</span></p><p class="text-sm text-slate-400">Brands scaled across D2C, SaaS &amp; local</p></div>
-<div><p class="font-display font-bold text-3xl"><span data-count="12" data-suffix="">0</span></p><p class="text-sm text-slate-400">Specialists — no account-manager telephone game</p></div>
-<div><p class="font-display font-bold text-3xl"><span data-count="6" data-suffix=" yrs">0</span></p><p class="text-sm text-slate-400">Average operator experience in paid + organic</p></div></div>
-<div class="reveal relative overflow-hidden rounded-3xl p-8 md:p-12 text-center border border-white/10 mt-6" style="background:linear-gradient(135deg,#12224d,#1a1350 55%,#052e26)">
-<h2 class="font-display font-bold text-3xl md:text-4xl">Work directly with the people above.</h2>
-<p class="text-slate-300 mt-3">Book a call — a specialist shows up, not a salesperson.</p>
-<div class="flex flex-col sm:flex-row gap-3 justify-center mt-6"><a href="contact.html" class="btn-primary px-8 py-3.5 rounded-2xl font-semibold text-white">Book a Strategy Call</a><a href="services.html" class="btn-ghost px-8 py-3.5 rounded-2xl font-semibold">Explore services</a></div></div></section>
+<section class="max-w-6xl mx-auto px-5 md:px-8 pb-24">
+<div class="reveal card noise p-9 md:p-12 grid md:grid-cols-3 gap-8">
+<div><p class="font-display font-bold text-4xl text-white"><span data-count="40" data-suffix="+">0</span></p><p class="mono !text-[.62rem] text-slate-500 mt-2">Brands scaled — D2C · SaaS · Local</p></div>
+<div><p class="font-display font-bold text-4xl text-white"><span data-count="12">0</span></p><p class="mono !text-[.62rem] text-slate-500 mt-2">Specialists — no telephone game</p></div>
+<div><p class="font-display font-bold text-4xl text-white"><span data-count="6" data-suffix=" yrs">0</span></p><p class="mono !text-[.62rem] text-slate-500 mt-2">Avg. operator experience</p></div></div>
+<div class="reveal relative overflow-hidden rounded-3xl p-10 md:p-14 text-center border border-white/10 noise mt-6" style="background:linear-gradient(135deg,#151a45,#121031 55%,#04231c)">
+<p class="mono text-cyan-300 mb-4">[ Direct access ]</p>
+<h2 class="h2">Work directly with the people above.</h2>
+<p class="text-slate-300 mt-4">Book a call — a specialist shows up, not a salesperson.</p>
+<div class="flex flex-col sm:flex-row gap-3 justify-center mt-8"><a data-magnetic href="contact.html" class="btn btn-primary px-9 py-4 text-[15px] text-white">Book a Strategy Call</a><a href="services.html" class="btn btn-ghost px-9 py-4 text-[15px]">Explore services</a></div></div></section>
+</main>
 
-<footer class="border-t border-white/10 bg-[#04070f]">
-<div class="max-w-7xl mx-auto px-5 md:px-8 py-14 grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1.4fr]">
-<div><div class="flex items-center gap-2.5 mb-4"><span class="w-9 h-9 rounded-xl grid place-items-center font-display font-bold text-lg text-white" style="background:linear-gradient(135deg,#3b82f6,#6366f1)">M</span><span class="font-display font-bold text-xl">MMinds<span class="text-emerald-400">.</span></span></div>
-<p class="text-slate-400 text-sm max-w-xs">High-precision growth engineering: Performance Marketing, SEO &amp; AEO.</p></div>
-<div><p class="text-sm font-semibold mb-4">Sitemap</p><ul class="space-y-2.5 text-sm text-slate-400"><li><a class="hover:text-white" href="index.html">Home</a></li><li><a class="hover:text-white" href="services.html">Services</a></li><li><a class="hover:text-white" href="about.html">Team</a></li><li><a class="hover:text-white" href="contact.html">Contact</a></li></ul></div>
-<div><p class="text-sm font-semibold mb-4">Services</p><ul class="space-y-2.5 text-sm text-slate-400"><li><a class="hover:text-white" href="services.html#performance">Performance Marketing</a></li><li><a class="hover:text-white" href="services.html#seo">SEO</a></li><li><a class="hover:text-white" href="services.html#aeo">AEO</a></li></ul></div>
-<div><p class="text-sm font-semibold mb-4">Growth Brief</p>
-<form id="nlForm" class="flex gap-2" novalidate><input type="email" required placeholder="you@company.com" class="field !py-2.5 text-sm" aria-label="Email"><button class="btn-primary px-4 rounded-xl text-white font-semibold text-sm">→</button></form>
-<p id="nlOk" class="hidden text-emerald-400 text-xs mt-2">✓ Subscribed.</p></div></div>
-<div class="border-t border-white/5"><div class="max-w-7xl mx-auto px-5 md:px-8 py-5 flex flex-col md:flex-row justify-between gap-2 text-xs text-slate-500"><p>© <span id="year"></span> MMinds Growth Pvt. Ltd. All rights reserved.</p><p>Privacy • Terms • Crafted for revenue.</p></div></div></footer>
-<div id="auditModal" class="hidden fixed inset-0 z-[60] grid place-items-center p-4" style="background:rgba(0,0,0,.7)"><div class="card max-w-md w-full p-8 relative" style="background:#0b1326"><button id="auditClose" class="absolute top-4 right-4 text-slate-400 hover:text-white">✕</button><h3 class="font-display font-bold text-2xl mb-2">Claim your free audit</h3><a href="contact.html" class="btn-primary block text-center py-3 rounded-xl font-semibold text-white mt-4">Continue to booking →</a></div></div>
+<footer class="border-t border-white/10" style="background:#05060a">
+<div class="max-w-6xl mx-auto px-5 md:px-8 pt-16 pb-8">
+<div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1.5fr]">
+<div><div class="flex items-center gap-2.5 mb-5"><span class="w-9 h-9 rounded-xl grid place-items-center font-display font-bold text-lg text-white" style="background:linear-gradient(135deg,#6366f1,#06b6d4)">M</span><span class="font-display font-bold text-xl text-white">MMinds<span class="text-emerald-400">.</span></span></div>
+<p class="text-sm max-w-xs">High-precision growth engineering — Performance Marketing, SEO &amp; AEO.</p>
+<p class="mono !text-[.62rem] text-slate-500 mt-6 flex items-center gap-2"><span class="pulse"></span>All growth systems operational</p></div>
+<nav aria-label="Sitemap"><p class="mono text-slate-500 mb-5">Sitemap</p><ul class="space-y-3 text-sm"><li><a class="hover:text-white transition" href="index.html">Home</a></li><li><a class="hover:text-white transition" href="services.html">Services</a></li><li><a class="hover:text-white transition" href="about.html">Studio</a></li><li><a class="hover:text-white transition" href="contact.html">Contact</a></li></ul></nav>
+<nav aria-label="Services"><p class="mono text-slate-500 mb-5">Engines</p><ul class="space-y-3 text-sm"><li><a class="hover:text-white transition" href="services.html#performance">Performance Marketing</a></li><li><a class="hover:text-white transition" href="services.html#seo">SEO</a></li><li><a class="hover:text-white transition" href="services.html#aeo">AEO</a></li></ul></nav>
+<div><p class="mono text-slate-500 mb-5">Growth brief — monthly</p>
+<form id="nlForm" class="flex gap-2" novalidate><input type="email" required placeholder="you@company.com" class="field !py-2.5 text-sm" aria-label="Email address"><button class="btn btn-primary px-4 text-white font-semibold" aria-label="Subscribe">→</button></form>
+<p id="nlOk" class="hidden text-emerald-400 text-xs mt-2">✓ Subscribed. Welcome to Growth Brief.</p></div></div>
+<div class="watermark mt-14" aria-hidden="true">MMINDS</div>
+<div class="border-t border-white/5 mt-6 pt-6 flex flex-col md:flex-row justify-between gap-2 text-xs text-slate-600"><p>© <span id="year"></span> MMinds Growth Pvt. Ltd. All rights reserved.</p><p class="font-mono">Privacy · Terms · Crafted for revenue.</p></div></div></footer>
+
+<div id="auditModal" class="hidden fixed inset-0 z-[60] grid place-items-center p-4" style="background:rgba(0,0,0,.72);backdrop-filter:blur(6px)" role="dialog" aria-modal="true" aria-label="Claim free audit">
+<div class="card noise max-w-md w-full p-8 relative" style="background:#0c0e15">
+<button id="auditClose" class="absolute top-4 right-4 text-slate-400 hover:text-white transition" aria-label="Close dialog">✕</button>
+<p class="mono text-cyan-300 mb-3">[ Limited slots ]</p>
+<h3 class="font-display font-bold text-2xl text-white mb-2">Claim your free audit</h3>
+<p class="text-sm mb-6">A senior strategist replies within one business day.</p>
+<a href="contact.html" class="btn btn-primary w-full py-3.5 text-white">Continue to booking →</a></div></div>
 <script defer src="assets/js/main.js"></script>
 </body></html>

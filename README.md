@@ -7,7 +7,7 @@
 Industrial-grade dark agency site. **No build step** — open any page directly.
 
 ## Stack
-Clean Modular **HTML5 + Tailwind CDN + Vanilla JS** (per spec option 2). Fonts: Outfit + Inter. No pricing anywhere by design.
+Clean Modular **HTML5 + Tailwind CDN + Vanilla JS**. Type system: Syne (display) + Inter (body) + JetBrains Mono (metrics/badges). No pricing anywhere by design.
 
 ## Structure
 ```
